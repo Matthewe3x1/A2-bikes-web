@@ -50,14 +50,11 @@ header {
     grid-template-columns: repeat(3, 1fr); /* ← tu zmeníš počet stĺpcov */
     gap: 25px;
     padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
 }
 
 .dual-slider {
     position: relative;
-    width: 100%;
-    max-width: 300px;
+    width: 300px;
     height: 6px;
     margin: 20px 0;
 }
@@ -93,8 +90,7 @@ header {
 .slider-values {
     display: flex;
     justify-content: space-between;
-    width: 100%;
-    max-width: 300px;
+    width: 300px;
     font-weight: 600;
 }
 
@@ -166,11 +162,9 @@ header {
     width: 100%;
     height: 180px;
     object-fit: cover;
-    display: block;
 }
 
 .bike-box {
-    positive: relative;
     background: white;
     border-radius: 12px;
     overflow: hidden;
@@ -178,8 +172,6 @@ header {
     text-align: center;
     transition: transform 0.4s, box-shadow 0.5s;
     cursor: pointer;
-    width: 100%;
-    max-width: 100%;
 }
 
 .bike-box:hover {
@@ -221,18 +213,6 @@ header {
     position: relative;
 }
 
-.favorites-header {
-    margin: 30px 20px 20px 20px;
-    padding-left: 20px;
-}
-
-.favorites-header h2 {
-    font-size: 32px;
-    color: #222;
-    font-weight: 700;
-    margin: 0;
-}
-
 .favorite-star {
     position: absolute;
     top: 10px;
@@ -242,14 +222,10 @@ header {
     height: 36px;
     border: none;
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(255,255,255,0.9);
+    background: rgba(255,255,255,0.85);
     color: #666;
-    font-size: 20px;
-    line-height: 1;
-    padding: 0;
+    font-size: 22px;
+    font-weight: bold;
     cursor: pointer;
     transition: 0.2s;
 }
@@ -261,9 +237,4 @@ header {
 .favorite-star.active {
     color: gold;
     background: rgba(0,0,0,0.75);
-}
-
-
-        font-size: 13px;
-    }
 }
