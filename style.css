@@ -54,7 +54,8 @@ header {
 
 .dual-slider {
     position: relative;
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
     height: 6px;
     margin: 20px 0;
 }
@@ -90,7 +91,8 @@ header {
 .slider-values {
     display: flex;
     justify-content: space-between;
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
     font-weight: 600;
 }
 
@@ -213,6 +215,17 @@ header {
     position: relative;
 }
 
+..favorites-header {
+    margin: 40px 20px 20px 20px;
+    padding-left: 20px;
+}
+
+.favorites-header h2 {
+    font-size: 32px;
+    color: #222;
+    font-weight: 700;
+}
+
 .favorite-star {
     position: absolute;
     top: 10px;
@@ -237,4 +250,234 @@ header {
 .favorite-star.active {
     color: gold;
     background: rgba(0,0,0,0.75);
+}
+
+@media (max-width: 1024px) {
+    .bikes-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .filters-selector {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .main-header {
+        height: 240px;
+    }
+
+    .header-title {
+        font-size: 34px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    body {
+        font-size: 15px;
+    }
+
+    .main-header {
+        height: 200px;
+    }
+
+    #headerVideo {
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .header-title {
+        font-size: 24px;
+        width: 90%;
+        text-align: center;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    /* NAVBAR */
+    .navbar-vertical {
+        top: 10px;
+        right: 10px;
+        padding: 8px 10px;
+        gap: 6px;
+    }
+
+    .navbar-vertical a {
+        font-size: 14px;
+        padding: 4px 6px;
+    }
+
+    /* INTRO */
+    .introduction {
+        margin: 15px;
+        padding: 18px;
+    }
+
+    .introduction h2 {
+        font-size: 22px;
+    }
+
+    .introduction p {
+        font-size: 15px;
+        line-height: 1.5;
+    }
+
+    /* FILTER BOXES */
+    .filters-selector {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        padding: 15px;
+    }
+
+    .filter-box {
+        padding: 16px;
+        font-size: 16px;
+    }
+
+    .filter-box h3 {
+        font-size: 18px;
+    }
+
+    /* FILTER CONTROLS */
+    .filter-controls {
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .filter-controls label {
+        font-size: 15px;
+    }
+
+    /* BIKES GRID */
+    .bikes-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        padding: 15px;
+    }
+
+    .bike-box {
+        width: 100%;
+    }
+
+    .bike-box img {
+        height: 180px;
+    }
+
+    .bike-info {
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    .bike-box h3 {
+        font-size: 18px;
+    }
+
+    .bike-box p {
+        font-size: 14px;
+    }
+
+    /* FAVORITES HEADER */
+    .favorites-header {
+        margin: 25px 15px 15px 15px;
+        padding-left: 0;
+    }
+
+    .favorites-header h2 {
+        font-size: 24px;
+    }
+
+    /* DETAIL PAGE */
+    .bike-detail {
+        margin: 15px;
+        padding: 20px;
+    }
+
+    .bike-detail h2 {
+        font-size: 24px;
+    }
+
+    .bike-detail p {
+        font-size: 15px;
+        line-height: 1.5;
+    }
+
+    /* BUTTONS */
+    button,
+    .buy-button,
+    .favorite-detail-btn {
+        width: 100%;
+        max-width: 100%;
+        font-size: 15px;
+        padding: 12px;
+        text-align: center;
+    }
+
+    /* STAR */
+    .favorite-star {
+        width: 32px;
+        height: 32px;
+        font-size: 18px;
+        top: 8px;
+        right: 8px;
+    }
+
+    /* SLIDERS */
+    .dual-slider {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .slider-values {
+        width: 100%;
+        font-size: 14px;
+        gap: 10px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    /* CONTACT */
+    .contacts {
+        margin: 15px;
+        padding: 20px;
+    }
+
+    footer {
+        padding: 16px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-header {
+        height: 170px;
+    }
+
+    .header-title {
+        font-size: 20px;
+    }
+
+    .navbar-vertical a {
+        font-size: 13px;
+    }
+
+    .introduction h2,
+    .favorites-header h2,
+    .bike-detail h2 {
+        font-size: 20px;
+    }
+
+    .bike-box img {
+        height: 160px;
+    }
+
+    .bike-box h3 {
+        font-size: 16px;
+    }
+
+    .bike-box p {
+        font-size: 13px;
+    }
 }
