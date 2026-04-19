@@ -215,8 +215,8 @@ header {
     position: relative;
 }
 
-..favorites-header {
-    margin: 40px 20px 20px 20px;
+.favorites-header {
+    margin: 30px 20px 20px 20px;
     padding-left: 20px;
 }
 
@@ -224,6 +224,7 @@ header {
     font-size: 32px;
     color: #222;
     font-weight: 700;
+    margin: 0;
 }
 
 .favorite-star {
@@ -235,10 +236,14 @@ header {
     height: 36px;
     border: none;
     border-radius: 50%;
-    background: rgba(255,255,255,0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.9);
     color: #666;
-    font-size: 22px;
-    font-weight: bold;
+    font-size: 20px;
+    line-height: 1;
+    padding: 0;
     cursor: pointer;
     transition: 0.2s;
 }
@@ -299,8 +304,8 @@ header {
     .navbar-vertical {
         top: 10px;
         right: 10px;
-        padding: 8px 10px;
-        gap: 6px;
+        padding: 10px 14px;
+        gap: 10px;
     }
 
     .navbar-vertical a {
@@ -394,7 +399,7 @@ header {
         margin: 15px;
         padding: 20px;
     }
-
+    
     .bike-detail h2 {
         font-size: 24px;
     }
@@ -406,7 +411,23 @@ header {
 
     /* BUTTONS */
     button,
-    .buy-button,
+    .buy-button {
+        display: block;
+        width: 100%;
+        max-width: 420px;
+        margin: 20px auto;
+        text-align: center;
+        background: #007bff;
+        color: white;
+        padding: 14px 20px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .buy-button:hover {
+        background: #0056b3;
+        
     .favorite-detail-btn {
         width: 100%;
         max-width: 100%;
