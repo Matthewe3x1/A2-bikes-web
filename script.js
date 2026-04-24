@@ -594,7 +594,7 @@ function showPage(page) {
         bikesHTML += '</div>';
 
         content.innerHTML = `
-            <div class="favorites-header>
+            <div class="favorites-header">
                 <h2>Favorite bikes</h2>
             </div>
             ${bikesHTML}
