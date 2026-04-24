@@ -47,11 +47,9 @@ header {
 
 .bikes-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr); /* ← tu zmeníš počet stĺpcov */
     gap: 25px;
     padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
 }
 
 .dual-slider {
@@ -167,7 +165,6 @@ header {
 }
 
 .bike-box {
-    position: relative;
     background: white;
     border-radius: 12px;
     overflow: hidden;
@@ -175,7 +172,6 @@ header {
     text-align: center;
     transition: transform 0.4s, box-shadow 0.5s;
     cursor: pointer;
-    width: 100%;
 }
 
 .bike-box:hover {
@@ -211,6 +207,10 @@ header {
     padding-right: 20px;
     padding-top: 10px;
     padding-bottom: 10px;
+}
+
+.bike-box {
+    position: relative;
 }
 
 .favorite-star {
