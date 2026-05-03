@@ -1,59 +1,76 @@
 const bikes = [
-    { name: "Honda CBR 250 R", type: "SPORT", cubature: 249, cubature_round: 250, power: 19, cylinders: 1, manufacturer: "Honda", price: { min: 1750, max: 2500 }, years: { min: 2011, max: 2020 }, img_filter: "images/honda cbr 250 r.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=honda+cbr+250r" },
-    { name: "Honda CBR 300 R", type: "SPORT", cubature: 286, cubature_round: 300, power: 22, cylinders: 1, manufacturer: "Honda", price: { min: 2800, max: 4200 }, years: { min: 2014, max: 2023 }, img_filter: "images/honda cbr 300 r.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=honda+cbr+300" },
-    { name: "Honda CBR 400 R", type: "SPORT", cubature: 399, cubature_round: 400, power: 35, cylinders: 2, manufacturer: "Honda", price: { min: 4000, max: 6500 }, years: { min: 2013, max: new Date().getFullYear() }, img_filter: "images/honda cbr 400 r.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=honda+cbr+400" },
-    { name: "Honda CBR 450 SR", type: "SPORT", cubature: 447, cubature_round: 450, power_real: 37, power: 35, cylinders: 2, manufacturer: "Honda", price: { min: 1800, max: 3500 }, years: { min: 1989, max: 1994 }, img_filter: "images/honda cbr 450 sr.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=honda+cbr+450+sr" },
-    { name: "Honda CBR 500 R", type: "SPORT", cubature: 471, cubature_round: 500, power: 35, cylinders: 2, manufacturer: "Honda", price: { min: 4000, max: 6000 }, years: { min: 2013, max: new Date().getFullYear() }, img_filter: "images/honda cbr 500 r.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=honda+cbr+500r" },
-    { name: "Honda CBR 600 R", type: "SPORT", cubature: 599, cubature_round: 600, power_real: 87, power: 35, cylinders: 4, manufacturer: "Honda", price: { min: 3000, max: 4000 }, years: { min: 2003, max: 2016 }, img_filter: "images/honda cbr 600 r.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=honda+cbr+600r" },
-    { name: "Honda CBR 600 F", type: "SPORT", cubature: 599, cubature_round: 600, power_real: 75, power: 35, cylinders: 4, manufacturer: "Honda", price: { min: 2000, max: 3000 }, years: {min: 1984, max: 2013 }, img_filter: "images/honda cbr 600 f.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=honda+cbr+600f" },
-    { name: "Kawasaki Ninja 250", type: "SPORT", cubature: 248, cubature_round: 250, power: 26, cylinders: 2, manufacturer: "Kawasaki", price: { min: 2200, max: 3000 }, years: { min: 1988, max: new Date().getFullYear() }, img_filter: "images/kawasaki ninja 250.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=kawasaki+ninja+250" },
-    { name: "Kawasaki Ninja 300", type: "SPORT", cubature: 296, cubature_round: 300, power: 29, cylinders: 2, manufacturer: "Kawasaki", price: { min: 3800, max: 4000 }, years: { min: 2012, max: 2017 }, img_filter: "images/kawasaki ninja 300.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=kawasaki+ninja+300" },
-    { name: "Kawasaki Ninja 400", type: "SPORT", cubature: 399, cubature_round: 400, power: 35, cylinders: 2, manufacturer: "Kawasaki", price: { min: 4000, max: 6500 }, years: { min: 2018, max: new Date().getFullYear() }, img_filter: "images/kawasaki ninja 400.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=kawasaki+ninja+400" },
-    { name: "Kawasaki Ninja 500", type: "SPORT", cubature: 451, cubature_round: 500, power_real: 38, power: 35, cylinders: 2, manufacturer: "Kawasaki", price: { min: 5500, max: 7000 }, years: { min: 2024, max: new Date().getFullYear() }, img_filter: "images/kawasaki ninja 500.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=kawasaki+ninja+500" },
-    { name: "Kawasaki Ninja 600", type: "SPORT", cubature: 599, cubature_round: 600, power_real: 80, power: 35, cylinders: 2, manufacturer: "Kawasaki", price: { min: 1800, max: 4000 }, years: { min: 1995, max: 2002 }, img_filter: "images/kawasaki ninja 600.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=kawasaki+ninja+600" },
-    { name: "Kawasaki GPZ 500", type: "SPORT", cubature: 498, cubature_round: 500, power_real: 44, power: 35, cylinders: 2, manufacturer: "Kawasaki", price: { min: 2000 , max: 2200 }, years: { min: 1987, max: 2009}, img_filter: "images/kawasaki gpz 500.jpg", bazos_url:"https://motocykle.bazos.sk/cestne/?hledat=kawasaki+gpz+500" },
-    { name: "Kawasaki ZZR 600", type: "SPORT", cubature: 599, cubature_round: 600, power_real: 72, power: 35, cylinders: 4, manufacturer: "Kawasaki", price: { min: 1600, max: 2300 }, years: { min: 1990, max: 2008 }, img_filter: "images/kawasaki zzr 600.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=kawasaki+zzr+600" },
-    { name: "Suzuki GSX 250 R", type: "SPORT", cubature: 248, cubature_round: 250, power: 18, cylinders: 2, manufacturer: "Suzuki", price: { min: 3000, max: 4500 }, years: { min: 2017, max: new Date().getFullYear() }, img_filter: "images/suzuki gsx 250 r.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=suzuki+gsxr+250" },
-    { name: "Suzuki GSX 400 R", type: "SPORT", cubature: 399, cubature_round: 400, power: 33, cylinders: 4, manufacturer: "Suzuki", price: { min: 3000, max: 4500 }, years: { min: 1984, max: 1996 }, img_filter: "images/suzuki gsx 400 r.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=suzuki+gsxr+400" },
-    { name: "Suzuki GSX 600 R", type: "SPORT", cubature: 599, cubature_round: 600, power_real: 70, power: 35, cylinders: 4, manufacturer: "Suzuki", price: { min: 1800, max: 4000 }, years: { min: 1992, max: new Date().getFullYear() }, img_filter: "images/suzuki gsx 600 r.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=suzuki+gsxr+600" },
-    { name: "Suzuki GSX 650 F", type: "SPORT", cubature: 656, cubature_round: 650, power_real: 64, power: 35, cylinders: 4, manufacturer: "Suzuki", price: { min: 2500, max: 3500 }, years: { min: 2008, max: 2015 }, img_filter: "images/suzuki gsx 650 f.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=suzuki+gsx+650f" },
-    { name: "Yamaha YZF R3", type: "SPORT", cubature: 321, cubature_round: 300, power: 31, cylinders: 2, manufacturer: "Yamaha", price: { min: 4000, max: 5000 }, years: { min: 2015, max: new Date().getFullYear() }, img_filter: "images/yamaha yzf r3.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=yamaha+r3" },
-    { name: "Yamaha YZF R6", type: "SPORT", cubature: 599, cubature_round: 600, power_real: 87, power: 35, cylinders: 4, manufacturer: "Yamaha", price: { min: 2000, max: 3000 }, years: { min: 1999, max: 2024 }, img_filter: "images/yamaha yzf r6.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=yamaha+r6" },
-    { name: "Yamaha YZF R7", type: "SPORT", cubature: 689, cubature_round: 700, power_real: 54, power: 35, cylinders: 2, manufacturer: "Yamaha", price: { min: 7000, max: 9000 }, years: { min: 1999, max: new Date().getFullYear() }, img_filter: "images/yamaha yzf r7.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=yamaha+r7" },
-    { name: "Yamaha FZR 600", type: "SPORT", cubature: 599, cubature_round: 600, power_real: 66, power: 35, cylinders: 4, manufacturer: "Yamaha", price: { min: 1500, max: 2500 }, years: { min: 1989, max: 1999 }, img_filter: "images/yamaha fzr 600.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=yamaha+fzr+600" },
-    { name: "KTM RC 390", type: "SPORT", cubature: 373, cubature_round: 400, power: 32, cylinders: 1, manufacturer: "KTM", price: { min: 3000, max: 4000 }, years: { min: 2014, max: new Date().getFullYear() }, img_filter: "images/ktm rc 390.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=ktm+rc+390" },
-    { name: "CFmoto 300 SR; 450 SS", type: "SPORT", cubature: 292, cubature_round: 300, power: 21, cylinders: 1, manufacturer: "CFmoto", price: { min: 3000, max: 4500 }, years: {min: 2020, max: new Date().getFullYear() }, img_filter: "images/cfmoto 300 sr.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=cfmoto+300+sr" },
-    { name: "Honda CB 250 F", type: "NAKED", cubature: 249, cubature_round: 250, power: 20, cylinders: 1, manufacturer: "Honda", price: { min: 2000, max: 2500 }, years: { min: 2014, max: 2017 }, img_filter: "images/honda cb 250 f.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=honda+cbf+250" },
-    { name: "Honda CB 300 R", type: "NAKED", cubature: 286, cubature_round: 300, power: 23, cylinders: 1, manufacturer: "Honda", price: { min: 3500, max: 5000 }, years: { min: 2018, max: new Date().getFullYear() }, img_filter: "images/honda cb 300 r.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=honda+cbr+300" },
-    { name: "Honda CB 400 F", type: "NAKED", cubature: 399, cubature_round: 400, power: 35, cylinders: 2, manufacturer: "Honda", price: { min: 4000, max: 6000 }, years: { min: 2013, max: new Date().getFullYear() }, img_filter: "images/honda cb 400 f.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=honda+cbf+400" },
-    { name: "Honda CB 500 F", type: "NAKED", cubature: 471, cubature_round: 500, power: 35, cylinders: 2, manufacturer: "Honda", price: { min: 1800, max: 3000 }, years: { min: 2013, max: new Date().getFullYear() }, img_filter: "images/honda cb 500 f.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=honda+cbf+500" },
-    { name: "Honda CB 600 F Hornet", type: "NAKED", cubature: 599, cubature_round: 600, power_real: 75, power: 35, cylinders: 4, manufacturer: "Honda", price: { min: 2000, max: 4000 }, years: { min: 1998, max: 2013 }, img_filter: "images/honda cb 600 f hornet.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=honda+cb+600+f" },
-    { name: "Honda CB 650 F", type: "NAKED", cubature: 649, cubature_round: 650, power_real: 64, power: 35, cylinders: 4, manufacturer: "Honda", price: { min: 4500, max: 7000 }, years: { min: 2014, max: 2018 }, img_filter: "images/honda cb 650 f.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=honda+cbf+650" },
-    { name: "Kawasaki Z 250", type: "NAKED", cubature: 249, cubature_round: 250, power: 23, cylinders: 2, manufacturer: "Kawasaki", price: { min: 2500, max: 3800 }, years: { min: 2013, max: 2016 }, img_filter: "images/kawasaki z 250.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=kawasaki+z+250" },
-    { name: "Kawasaki Z 300", type: "NAKED", cubature: 296, cubature_round: 300, power: 29, cylinders: 2, manufacturer: "Kawasaki", price: { min: 2500, max: 3500 }, years: { min: 2015, max: 2018 }, img_filter: "images/kawasaki z 300.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=kawasaki+z+300" },
-    { name: "Kawasaki Z 400", type: "NAKED", cubature: 399, cubature_round: 400, power: 33, cylinders: 2, manufacturer: "Kawasaki", price: { min: 5500, max: 6500 }, years: { min: 2018, max: new Date().getFullYear() }, img_filter: "images/kawasaki z 400.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/20/?hledat=kawasaki+z+400" },
-    { name: "Kawasaki Z 500", type: "NAKED", cubature: 451, cubature_round: 500, power: 33, cylinders: 2, manufacturer: "Kawasaki", price: { min: 5500, max: 6500 }, years: { min: 2024, max: new Date().getFullYear() }, img_filter: "images/kawasaki z 500.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/20/?hledat=kawasaki+z+500" },
-    { name: "Kawasaki Z 650", type: "NAKED", cubature: 649, cubature_round: 650, power_real: 50, power: 35, cylinders: 2, manufacturer: "Kawasaki", price: { min: 4000, max: 6500 }, years: { min: 2017, max: new Date().getFullYear() }, img_filter: "images/kawasaki z 650.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/20/?hledat=kawasaki+z+650" },
-    { name: "Kawasaki ER-6N", type: "NAKED", cubature: 649, cubature_round: 650, power_real: 53, power: 35, cylinders: 2, manufacturer: "Kawasaki", price: { min: 1800, max: 4500 }, years: { min: 2006, max: 2016 }, img_filter: "images/kawasaki er 6 n.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/20/?hledat=kawasaki+er6n" },
-    { name: "Suzuki GSR 600", type: "NAKED", cubature: 599, cubature_round: 600, power_real: 72, power: 35, cylinders: 4, manufacturer: "Suzuki", price: { min: 2000, max: 3500 }, years: { min: 2006, max: 2011 }, img_filter: "images/suzuki gsr 600.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/20/?hledat=suzuki+gsr+600" },
-    { name: "Suzuki GSR 750", type: "NAKED", cubature: 749, cubature_round: 750, power_real: 78, power: 35, cylinders: 4, manufacturer: "Suzuki", price: { min: 4500, max: 5000 }, years: { min: 2011, max: 2016 }, img_filter: "images/suzuki gsr 750.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/20/?hledat=suzuki+gsr+750" },
-    { name: "Suzuki GSX-S 750", type: "NAKED", cubature: 749, cubature_round: 750, power_real: 84, power: 35, cylinders: 4, manufacturer: "Suzuki", price: { min: 6000, max: 7000 }, years: { min: 2017, max: new Date().getFullYear() }, img_filter: "images/suzuki gsx s 750.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/20/?hledat=suzuki+gsxs+750" },
-    { name: "Suzuki SV 650", type: "NAKED", cubature: 645, cubature_round: 650, power_real: 55, power: 35, cylinders: 2, manufacturer: "Suzuki", price: { min: 1800, max: 5000 }, years: { min: 1999, max: new Date().getFullYear() }, img_filter: "images/suzuki sv 650.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/20/?hledat=suzuki+sv+650" },
-    { name: "Yamaha MT-03", type: "NAKED", cubature: 321, cubature_round: 300, power: 31, cylinders: 2, manufacturer: "Yamaha", price: { min: 2000, max: 4000 }, years: { min: 2016, max: new Date().getFullYear() }, img_filter: "images/yamaha mt 03.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/20/?hledat=yamaha+mt+03" },
-    { name: "Yamaha MT-07", type: "NAKED", cubature: 689, cubature_round: 700, power_real: 54, power: 35, cylinders: 2, manufacturer: "Yamaha", price: { min: 4000, max: 6500 }, years: { min: 2014, max: new Date().getFullYear() }, img_filter: "images/yamaha mt 07.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/20/?hledat=yamaha+mt+07" },
-    { name: "Yamaha FZ6", type: "NAKED", cubature: 600, cubature_round: 600, power_real: 72, power: 35, cylinders: 4, manufacturer: "Yamaha", price: { min: 1500, max: 3000 }, years: { min: 2004, max: 2010 }, img_filter: "images/yamaha fz 6.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/20/?hledat=yamaha+fz6" },
-    { name: "Yamaha FZ8", type: "NAKED", cubature: 779, cubature_round: 800, power_real: 78, power: 35, cylinders: 4, manufacturer: "Yamaha", price: { min: 3200, max: 5200 }, years: { min: 2010, max: 2016 }, img_filter: "images/yamaha fz 8.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/20/?hledat=yamaha+fz8" },
-    { name: "KTM Duke 390", type: "NAKED", cubature: 373, cubature_round: 400, power: 32, cylinders: 1, manufacturer: "KTM", price: { min: 2000, max: 4500 }, years: {min: 2013, max: new Date().getFullYear() }, img_filter: "images/ktm duke 390.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=ktm+duke+390" },
-    { name: "KTM Duke 690", type: "NAKED", cubature: 690, cubature_round: 700, power_real: 54, power: 35, cylinders: 1, manufacturer: "KTM", price: { min: 3000, max: 5000 }, years: { min: 2008, max: new Date().getFullYear() }, img_filter: "images/ktm duke 690.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=ktm+duke+690" },
-    { name: "KTM Duke 790", type: "NAKED", cubature: 799, cubature_round: 800, power_real: 77, power: 35, cylinders: 2, manufacturer: "KTM", price: { min: 4500, max: 7000 }, years: { min: 2017, max: new Date().getFullYear() }, img_filter: "images/ktm duke 790.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=ktm+duke+790" },
-    { name: "CFmoto 300 NK", type: "NAKED", cubature: 292, cubature_round: 300, power: 21, cylinders: 1, manufacturer: "CFmoto", price: { min: 3000, max: 3500 }, years: { min: 2019, max: new Date().getFullYear() }, img_filter: "images/cfmoto 300 nk.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=cfmoto+300+nk" },
-    { name: "CFmoto 400 NK", type: "NAKED", cubature: 400, cubature_round: 400, power: 30, cylinders: 2, manufacturer: "CFmoto", price: { min: 3000, max: 4500 }, years: { min: 2018, max: new Date().getFullYear() }, img_filter: "images/cfmoto 400 nk.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=cfmoto+400+nk" },
-    { name: "CFmoto 450 NK", type: "NAKED", cubature: 449, cubature_round: 450, power: 35, cylinders: 2, manufacturer: "CFmoto", price: { min: 4500, max: 5500 }, years: { min: 2023, max: new Date().getFullYear() }, img_filter: "images/cfmoto 450 nk.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=cfmoto+450+nk" },
-    { name: "CFmoto 650 NK", type: "NAKED", cubature: 649, cubature_round: 650, power_real: 45, power: 35, cylinders: 2, manufacturer: "CFmoto", price: { min: 4000, max: 5200 }, years: { min: 2012, max: new Date().getFullYear() }, img_filter: "images/cfmoto 650 nk.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=cfmoto+650+nk" },
-    { name: "BMW G 310 R", type: "NAKED", cubature: 313, cubature_round: 300, power: 25, cylinders: 1, manufacturer: "BMW", price: { min: 4000, max: 4500 }, years: { min: 2016, max: new Date().getFullYear() }, img_filter: "images/bmw g 310 r.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=bmw+g+310+r" },
-    { name: "Voge 525 R", type: "NAKED", cubature: 494, cubature_round: 500, power: 35, cylinders: 2, manufacturer: "Voge", price: { min: 4500, max: 6000 }, years: { min: 2023, max: new Date().getFullYear() }, img_filter: "images/voge 525 r.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=voge+525+r" },
+    { name: "Honda CBR 250 R", type: "SPORT", cubature: 249, cubature_round: 250, power: 19, cylinders: 1, manufacturer: "Honda", price: { min: 1750, max: 2500 }, years: { min: 2011, max: 2020 }, img_filter: "images/honda cbr 250 r.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=honda+cbr+250r", color: #cc000 },
+    { name: "Honda CBR 300 R", type: "SPORT", cubature: 286, cubature_round: 300, power: 22, cylinders: 1, manufacturer: "Honda", price: { min: 2800, max: 4200 }, years: { min: 2014, max: 2023 }, img_filter: "images/honda cbr 300 r.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=honda+cbr+300", color: #cc000 },
+    { name: "Honda CBR 400 R", type: "SPORT", cubature: 399, cubature_round: 400, power: 35, cylinders: 2, manufacturer: "Honda", price: { min: 4000, max: 6500 }, years: { min: 2013, max: new Date().getFullYear() }, img_filter: "images/honda cbr 400 r.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=honda+cbr+400", color: #cc000 },
+    { name: "Honda CBR 450 SR", type: "SPORT", cubature: 447, cubature_round: 450, power_real: 37, power: 35, cylinders: 2, manufacturer: "Honda", price: { min: 1800, max: 3500 }, years: { min: 1989, max: 1994 }, img_filter: "images/honda cbr 450 sr.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=honda+cbr+450+sr", color: #cc000 },
+    { name: "Honda CBR 500 R", type: "SPORT", cubature: 471, cubature_round: 500, power: 35, cylinders: 2, manufacturer: "Honda", price: { min: 4000, max: 6000 }, years: { min: 2013, max: new Date().getFullYear() }, img_filter: "images/honda cbr 500 r.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=honda+cbr+500r", color: #cc000 },
+    { name: "Honda CBR 600 R", type: "SPORT", cubature: 599, cubature_round: 600, power_real: 87, power: 35, cylinders: 4, manufacturer: "Honda", price: { min: 3000, max: 4000 }, years: { min: 2003, max: 2016 }, img_filter: "images/honda cbr 600 r.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=honda+cbr+600r", color: #cc000 },
+    { name: "Honda CBR 600 F", type: "SPORT", cubature: 599, cubature_round: 600, power_real: 75, power: 35, cylinders: 4, manufacturer: "Honda", price: { min: 2000, max: 3000 }, years: {min: 1984, max: 2013 }, img_filter: "images/honda cbr 600 f.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=honda+cbr+600f", color: #cc000 },
+    { name: "Kawasaki Ninja 250", type: "SPORT", cubature: 248, cubature_round: 250, power: 26, cylinders: 2, manufacturer: "Kawasaki", price: { min: 2200, max: 3000 }, years: { min: 1988, max: new Date().getFullYear() }, img_filter: "images/kawasaki ninja 250.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=kawasaki+ninja+250", color: #39FF14 },
+    { name: "Kawasaki Ninja 300", type: "SPORT", cubature: 296, cubature_round: 300, power: 29, cylinders: 2, manufacturer: "Kawasaki", price: { min: 3800, max: 4000 }, years: { min: 2012, max: 2017 }, img_filter: "images/kawasaki ninja 300.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=kawasaki+ninja+300", color: #39FF14 },
+    { name: "Kawasaki Ninja 400", type: "SPORT", cubature: 399, cubature_round: 400, power: 35, cylinders: 2, manufacturer: "Kawasaki", price: { min: 4000, max: 6500 }, years: { min: 2018, max: new Date().getFullYear() }, img_filter: "images/kawasaki ninja 400.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=kawasaki+ninja+400", color: #39FF14 },
+    { name: "Kawasaki Ninja 500", type: "SPORT", cubature: 451, cubature_round: 500, power_real: 38, power: 35, cylinders: 2, manufacturer: "Kawasaki", price: { min: 5500, max: 7000 }, years: { min: 2024, max: new Date().getFullYear() }, img_filter: "images/kawasaki ninja 500.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=kawasaki+ninja+500", color: #39FF14 },
+    { name: "Kawasaki Ninja 600", type: "SPORT", cubature: 599, cubature_round: 600, power_real: 80, power: 35, cylinders: 2, manufacturer: "Kawasaki", price: { min: 1800, max: 4000 }, years: { min: 1995, max: 2002 }, img_filter: "images/kawasaki ninja 600.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=kawasaki+ninja+600", color: #39FF14 },
+    { name: "Kawasaki GPZ 500", type: "SPORT", cubature: 498, cubature_round: 500, power_real: 44, power: 35, cylinders: 2, manufacturer: "Kawasaki", price: { min: 2000 , max: 2200 }, years: { min: 1987, max: 2009}, img_filter: "images/kawasaki gpz 500.jpg", bazos_url:"https://motocykle.bazos.sk/cestne/?hledat=kawasaki+gpz+500", color: #39FF14 },
+    { name: "Kawasaki ZZR 600", type: "SPORT", cubature: 599, cubature_round: 600, power_real: 72, power: 35, cylinders: 4, manufacturer: "Kawasaki", price: { min: 1600, max: 2300 }, years: { min: 1990, max: 2008 }, img_filter: "images/kawasaki zzr 600.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=kawasaki+zzr+600", color: #39FF14 },
+    { name: "Suzuki GSX 250 R", type: "SPORT", cubature: 248, cubature_round: 250, power: 18, cylinders: 2, manufacturer: "Suzuki", price: { min: 3000, max: 4500 }, years: { min: 2017, max: new Date().getFullYear() }, img_filter: "images/suzuki gsx 250 r.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=suzuki+gsxr+250", color: #1ab9d9 },
+    { name: "Suzuki GSX 400 R", type: "SPORT", cubature: 399, cubature_round: 400, power: 33, cylinders: 4, manufacturer: "Suzuki", price: { min: 3000, max: 4500 }, years: { min: 1984, max: 1996 }, img_filter: "images/suzuki gsx 400 r.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=suzuki+gsxr+400", color: #1ab9d9 },
+    { name: "Suzuki GSX 600 R", type: "SPORT", cubature: 599, cubature_round: 600, power_real: 70, power: 35, cylinders: 4, manufacturer: "Suzuki", price: { min: 1800, max: 4000 }, years: { min: 1992, max: new Date().getFullYear() }, img_filter: "images/suzuki gsx 600 r.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=suzuki+gsxr+600", color: #1ab9d9 },
+    { name: "Suzuki GSX 650 F", type: "SPORT", cubature: 656, cubature_round: 650, power_real: 64, power: 35, cylinders: 4, manufacturer: "Suzuki", price: { min: 2500, max: 3500 }, years: { min: 2008, max: 2015 }, img_filter: "images/suzuki gsx 650 f.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=suzuki+gsx+650f", color: #1ab9d9 },
+    { name: "Yamaha YZF R3", type: "SPORT", cubature: 321, cubature_round: 300, power: 31, cylinders: 2, manufacturer: "Yamaha", price: { min: 4000, max: 5000 }, years: { min: 2015, max: new Date().getFullYear() }, img_filter: "images/yamaha yzf r3.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=yamaha+r3", color: #0057ff },
+    { name: "Yamaha YZF R6", type: "SPORT", cubature: 599, cubature_round: 600, power_real: 87, power: 35, cylinders: 4, manufacturer: "Yamaha", price: { min: 2000, max: 3000 }, years: { min: 1999, max: 2024 }, img_filter: "images/yamaha yzf r6.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=yamaha+r6", color: #0057ff },
+    { name: "Yamaha YZF R7", type: "SPORT", cubature: 689, cubature_round: 700, power_real: 54, power: 35, cylinders: 2, manufacturer: "Yamaha", price: { min: 7000, max: 9000 }, years: { min: 1999, max: new Date().getFullYear() }, img_filter: "images/yamaha yzf r7.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=yamaha+r7", color: #0057ff },
+    { name: "Yamaha FZR 600", type: "SPORT", cubature: 599, cubature_round: 600, power_real: 66, power: 35, cylinders: 4, manufacturer: "Yamaha", price: { min: 1500, max: 2500 }, years: { min: 1989, max: 1999 }, img_filter: "images/yamaha fzr 600.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=yamaha+fzr+600", color: #0057ff },
+    { name: "KTM RC 390", type: "SPORT", cubature: 373, cubature_round: 400, power: 32, cylinders: 1, manufacturer: "KTM", price: { min: 3000, max: 4000 }, years: { min: 2014, max: new Date().getFullYear() }, img_filter: "images/ktm rc 390.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=ktm+rc+390", color: #ff6f00 },
+    { name: "CFmoto 300 SR; 450 SS", type: "SPORT", cubature: 292, cubature_round: 300, power: 21, cylinders: 1, manufacturer: "CFmoto", price: { min: 3000, max: 4500 }, years: {min: 2020, max: new Date().getFullYear() }, img_filter: "images/cfmoto 300 sr.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=cfmoto+300+sr", color: #cfcfcf },
+    { name: "Honda CB 250 F", type: "NAKED", cubature: 249, cubature_round: 250, power: 20, cylinders: 1, manufacturer: "Honda", price: { min: 2000, max: 2500 }, years: { min: 2014, max: 2017 }, img_filter: "images/honda cb 250 f.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=honda+cbf+250", color: #cc000 },
+    { name: "Honda CB 300 R", type: "NAKED", cubature: 286, cubature_round: 300, power: 23, cylinders: 1, manufacturer: "Honda", price: { min: 3500, max: 5000 }, years: { min: 2018, max: new Date().getFullYear() }, img_filter: "images/honda cb 300 r.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=honda+cbr+300", color: #cc000 },
+    { name: "Honda CB 400 F", type: "NAKED", cubature: 399, cubature_round: 400, power: 35, cylinders: 2, manufacturer: "Honda", price: { min: 4000, max: 6000 }, years: { min: 2013, max: new Date().getFullYear() }, img_filter: "images/honda cb 400 f.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=honda+cbf+400", color: #cc000 },
+    { name: "Honda CB 500 F", type: "NAKED", cubature: 471, cubature_round: 500, power: 35, cylinders: 2, manufacturer: "Honda", price: { min: 1800, max: 3000 }, years: { min: 2013, max: new Date().getFullYear() }, img_filter: "images/honda cb 500 f.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=honda+cbf+500", color: #cc000 },
+    { name: "Honda CB 600 F Hornet", type: "NAKED", cubature: 599, cubature_round: 600, power_real: 75, power: 35, cylinders: 4, manufacturer: "Honda", price: { min: 2000, max: 4000 }, years: { min: 1998, max: 2013 }, img_filter: "images/honda cb 600 f hornet.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=honda+cb+600+f", color: #cc000 },
+    { name: "Honda CB 650 F", type: "NAKED", cubature: 649, cubature_round: 650, power_real: 64, power: 35, cylinders: 4, manufacturer: "Honda", price: { min: 4500, max: 7000 }, years: { min: 2014, max: 2018 }, img_filter: "images/honda cb 650 f.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=honda+cbf+650", color: #cc000 },
+    { name: "Kawasaki Z 250", type: "NAKED", cubature: 249, cubature_round: 250, power: 23, cylinders: 2, manufacturer: "Kawasaki", price: { min: 2500, max: 3800 }, years: { min: 2013, max: 2016 }, img_filter: "images/kawasaki z 250.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=kawasaki+z+250", color: #39FF14 },
+    { name: "Kawasaki Z 300", type: "NAKED", cubature: 296, cubature_round: 300, power: 29, cylinders: 2, manufacturer: "Kawasaki", price: { min: 2500, max: 3500 }, years: { min: 2015, max: 2018 }, img_filter: "images/kawasaki z 300.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=kawasaki+z+300", color: #39FF14 },
+    { name: "Kawasaki Z 400", type: "NAKED", cubature: 399, cubature_round: 400, power: 33, cylinders: 2, manufacturer: "Kawasaki", price: { min: 5500, max: 6500 }, years: { min: 2018, max: new Date().getFullYear() }, img_filter: "images/kawasaki z 400.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/20/?hledat=kawasaki+z+400", color: #39FF14 },
+    { name: "Kawasaki Z 500", type: "NAKED", cubature: 451, cubature_round: 500, power: 33, cylinders: 2, manufacturer: "Kawasaki", price: { min: 5500, max: 6500 }, years: { min: 2024, max: new Date().getFullYear() }, img_filter: "images/kawasaki z 500.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/20/?hledat=kawasaki+z+500", color: #39FF14 },
+    { name: "Kawasaki Z 650", type: "NAKED", cubature: 649, cubature_round: 650, power_real: 50, power: 35, cylinders: 2, manufacturer: "Kawasaki", price: { min: 4000, max: 6500 }, years: { min: 2017, max: new Date().getFullYear() }, img_filter: "images/kawasaki z 650.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/20/?hledat=kawasaki+z+650", color: #39FF14 },
+    { name: "Kawasaki ER-6N", type: "NAKED", cubature: 649, cubature_round: 650, power_real: 53, power: 35, cylinders: 2, manufacturer: "Kawasaki", price: { min: 1800, max: 4500 }, years: { min: 2006, max: 2016 }, img_filter: "images/kawasaki er 6 n.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/20/?hledat=kawasaki+er6n", color: #39FF14 },
+    { name: "Suzuki GSR 600", type: "NAKED", cubature: 599, cubature_round: 600, power_real: 72, power: 35, cylinders: 4, manufacturer: "Suzuki", price: { min: 2000, max: 3500 }, years: { min: 2006, max: 2011 }, img_filter: "images/suzuki gsr 600.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/20/?hledat=suzuki+gsr+600", color: #1ab9d9 },
+    { name: "Suzuki GSR 750", type: "NAKED", cubature: 749, cubature_round: 750, power_real: 78, power: 35, cylinders: 4, manufacturer: "Suzuki", price: { min: 4500, max: 5000 }, years: { min: 2011, max: 2016 }, img_filter: "images/suzuki gsr 750.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/20/?hledat=suzuki+gsr+750", color: #1ab9d9 },
+    { name: "Suzuki GSX-S 750", type: "NAKED", cubature: 749, cubature_round: 750, power_real: 84, power: 35, cylinders: 4, manufacturer: "Suzuki", price: { min: 6000, max: 7000 }, years: { min: 2017, max: new Date().getFullYear() }, img_filter: "images/suzuki gsx s 750.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/20/?hledat=suzuki+gsxs+750", color: #1ab9d9 },
+    { name: "Suzuki SV 650", type: "NAKED", cubature: 645, cubature_round: 650, power_real: 55, power: 35, cylinders: 2, manufacturer: "Suzuki", price: { min: 1800, max: 5000 }, years: { min: 1999, max: new Date().getFullYear() }, img_filter: "images/suzuki sv 650.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/20/?hledat=suzuki+sv+650", color: #1ab9d9 },
+    { name: "Yamaha MT-03", type: "NAKED", cubature: 321, cubature_round: 300, power: 31, cylinders: 2, manufacturer: "Yamaha", price: { min: 2000, max: 4000 }, years: { min: 2016, max: new Date().getFullYear() }, img_filter: "images/yamaha mt 03.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/20/?hledat=yamaha+mt+03", color: #0057ff },
+    { name: "Yamaha MT-07", type: "NAKED", cubature: 689, cubature_round: 700, power_real: 54, power: 35, cylinders: 2, manufacturer: "Yamaha", price: { min: 4000, max: 6500 }, years: { min: 2014, max: new Date().getFullYear() }, img_filter: "images/yamaha mt 07.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/20/?hledat=yamaha+mt+07", color: #0057ff },
+    { name: "Yamaha FZ6", type: "NAKED", cubature: 600, cubature_round: 600, power_real: 72, power: 35, cylinders: 4, manufacturer: "Yamaha", price: { min: 1500, max: 3000 }, years: { min: 2004, max: 2010 }, img_filter: "images/yamaha fz 6.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/20/?hledat=yamaha+fz6", color: #0057ff },
+    { name: "Yamaha FZ8", type: "NAKED", cubature: 779, cubature_round: 800, power_real: 78, power: 35, cylinders: 4, manufacturer: "Yamaha", price: { min: 3200, max: 5200 }, years: { min: 2010, max: 2016 }, img_filter: "images/yamaha fz 8.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/20/?hledat=yamaha+fz8", color: #0057ff },
+    { name: "KTM Duke 390", type: "NAKED", cubature: 373, cubature_round: 400, power: 32, cylinders: 1, manufacturer: "KTM", price: { min: 2000, max: 4500 }, years: {min: 2013, max: new Date().getFullYear() }, img_filter: "images/ktm duke 390.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=ktm+duke+390", color: #ff6f00 },
+    { name: "KTM Duke 690", type: "NAKED", cubature: 690, cubature_round: 700, power_real: 54, power: 35, cylinders: 1, manufacturer: "KTM", price: { min: 3000, max: 5000 }, years: { min: 2008, max: new Date().getFullYear() }, img_filter: "images/ktm duke 690.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=ktm+duke+690", color: #ff6f00 },
+    { name: "KTM Duke 790", type: "NAKED", cubature: 799, cubature_round: 800, power_real: 77, power: 35, cylinders: 2, manufacturer: "KTM", price: { min: 4500, max: 7000 }, years: { min: 2017, max: new Date().getFullYear() }, img_filter: "images/ktm duke 790.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=ktm+duke+790", color: #ff6f00 },
+    { name: "CFmoto 300 NK", type: "NAKED", cubature: 292, cubature_round: 300, power: 21, cylinders: 1, manufacturer: "CFmoto", price: { min: 3000, max: 3500 }, years: { min: 2019, max: new Date().getFullYear() }, img_filter: "images/cfmoto 300 nk.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=cfmoto+300+nk", color: #cfcfcf },
+    { name: "CFmoto 400 NK", type: "NAKED", cubature: 400, cubature_round: 400, power: 30, cylinders: 2, manufacturer: "CFmoto", price: { min: 3000, max: 4500 }, years: { min: 2018, max: new Date().getFullYear() }, img_filter: "images/cfmoto 400 nk.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=cfmoto+400+nk", color: #cfcfcf },
+    { name: "CFmoto 450 NK", type: "NAKED", cubature: 449, cubature_round: 450, power: 35, cylinders: 2, manufacturer: "CFmoto", price: { min: 4500, max: 5500 }, years: { min: 2023, max: new Date().getFullYear() }, img_filter: "images/cfmoto 450 nk.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=cfmoto+450+nk", color: #cfcfcf },
+    { name: "CFmoto 650 NK", type: "NAKED", cubature: 649, cubature_round: 650, power_real: 45, power: 35, cylinders: 2, manufacturer: "CFmoto", price: { min: 4000, max: 5200 }, years: { min: 2012, max: new Date().getFullYear() }, img_filter: "images/cfmoto 650 nk.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=cfmoto+650+nk", color: #cfcfcf },
+    { name: "BMW G 310 R", type: "NAKED", cubature: 313, cubature_round: 300, power: 25, cylinders: 1, manufacturer: "BMW", price: { min: 4000, max: 4500 }, years: { min: 2016, max: new Date().getFullYear() }, img_filter: "images/bmw g 310 r.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=bmw+g+310+r#031e49", color: #031e49 },
+    { name: "Voge 525 R", type: "NAKED", cubature: 494, cubature_round: 500, power: 35, cylinders: 2, manufacturer: "Voge", price: { min: 4500, max: 6000 }, years: { min: 2023, max: new Date().getFullYear() }, img_filter: "images/voge 525 r.jpg", bazos_url: "https://motocykle.bazos.sk/cestne/?hledat=voge+525+r", color: #555555 },
 ]
 
+function bikeCard(bike, extra = "") {
+    return `
+        <div class="bike-box" 
+             style="--bike-color:${bike.color || '#007bff'}" 
+             onclick="showBike('${bike.name}')">
+
+            <button class="favorite-star ${isFavorite(bike.name) ? "active" : ""}" 
+                onclick="toggleFavorite('${bike.name}', event)">★</button>
+
+            <img src="${bike.img_filter || "images/no-image.jpg"}" alt="${bike.name}">
+
+            <h3>${bike.name}</h3>
+
+            ${extra}
+        </div>
+    `;
+}
 
 function getFavorites() {
     return JSON.parse(localStorage.getItem('favoriteBikes')) || [];
@@ -183,14 +200,8 @@ function showPage(page) {
     else if (page === 'filter-all') {
         let bikesHTML = '<div class="bikes-grid">';
         bikes.forEach(bike => {
-            bikesHTML += `
-                <div class="bike-box" onclick="showBike('${bike.name}')">
-                    <button class="favorite-star ${isFavorite(bike.name) ? 'active' : ''}" onclick="toggleFavorite('${bike.name}', event)">★</button>
-                    <img src="${bike.img_filter || 'images/no-image.jpg'}" alt="${bike.name}">
-                    <h3>${bike.name}</h3>
-                </div>
-            `;
-        })
+            bikesHTML += bikeCard(bike);
+        });
         bikesHTML += '</div>'
 
         content.innerHTML = `
@@ -227,14 +238,9 @@ function showPage(page) {
                 ? bikes.filter(b => selected.includes(b.type))
                 : bikes;
 
-            bikesContainer.innerHTML = filtered.map(bike => `
-                <div class="bike-box" onclick="showBike('${bike.name}')">
-                    <button class="favorite-star ${isFavorite(bike.name) ? 'active' : ''}" onclick="toggleFavorite('${bike.name}', event)">★</button>
-                    <img src="${bike.img_filter || 'images/no-image.jpg'}" alt="${bike.name}">
-                    <h3>${bike.name}</h3>
-                    <p>${bike.type}</p>
-                </div>
-            `).join('');
+            bikesContainer.innerHTML = filtered.map(bike =>
+                bikeCard(bike, `<p>${bike.type}</p>`)
+            ).join('');
         }
 
         checkboxes.forEach(ch => ch.addEventListener('change', filterBikes));
@@ -270,13 +276,9 @@ function showPage(page) {
                 ? bikes.filter(b => selected.includes(b.cubature_round))
                 : bikes;
 
-            bikesContainer.innerHTML = filtered.map(bike => `
-                <div class="bike-box" onclick="showBike('${bike.name}')">
-                    <button class="favorite-star ${isFavorite(bike.name) ? 'active' : ''}" onclick="toggleFavorite('${bike.name}', event)">★</button>
-                    <img src="${bike.img_filter || 'images/no-image.jpg'}" alt="${bike.name}">
-                    <h3>${bike.name}</h3>
-                </div>
-            `).join('');
+            bikesContainer.innerHTML = filtered.map(bike =>
+                bikeCard(bike)
+            ).join('');
         }
 
         checkboxes.forEach(ch => ch.addEventListener('change', filterBikes));
@@ -329,14 +331,9 @@ function showPage(page) {
                 b.power !== null && b.power >= min && b.power <= max
             );
 
-            bikesContainer.innerHTML = filtered.map(bike => `
-                <div class="bike-box" onclick="showBike('${bike.name}')">
-                    <button class="favorite-star ${isFavorite(bike.name) ? 'active' : ''}" onclick="toggleFavorite('${bike.name}', event)">★</button>
-                    <img src="${bike.img_filter || 'images/no-image.jpg'}" alt="${bike.name}">
-                    <h3>${bike.name}</h3>
-                    <p>${bike.power} kW</p>
-                </div>
-            `).join('');
+            bikesContainer.innerHTML = filtered.map(bike =>
+                bikeCard(bike, `<p>${bike.power} kW</p>`)
+            ).join('');
 
             if (filtered.length === 0) {
                 bikesContainer.innerHTML = "<p>No bikes found in this power range.</p>";
@@ -397,14 +394,9 @@ function showPage(page) {
                 return bikeMax  >= min && bikeMin <= max;
             });
 
-            bikesContainer.innerHTML = filtered.map(bike => `
-                <div class="bike-box" onclick="showBike('${bike.name}')">
-                    <button class="favorite-star ${isFavorite(bike.name) ? 'active' : ''}" onclick="toggleFavorite('${bike.name}', event)">★</button>
-                    <img src="${bike.img_filter || 'images/no-image.jpg'}" alt="${bike.name}">
-                    <h3>${bike.name}</h3>
-                    <p>${bike.price.min}-${bike.price.max} €</p>
-                </div>
-            `).join('');
+            bikesContainer.innerHTML = filtered.map(bike =>
+                bikeCard(bike, `<p>${bike.price.min}-${bike.price.max} €</p>`)
+            ).join('');
 
             if (filtered.length === 0) {
                 bikesContainer.innerHTML = "<p>No bikes found in this price range.</p>";
@@ -444,13 +436,9 @@ function showPage(page) {
                 ? bikes.filter(b => selected.includes(b.cylinders))
                 : bikes;
 
-            bikesContainer.innerHTML = filtered.map(bike => `
-                <div class="bike-box" onclick="showBike('${bike.name}')">
-                    <button class="favorite-star ${isFavorite(bike.name) ? 'active' : ''}" onclick="toggleFavorite('${bike.name}', event)">★</button>
-                    <img src="${bike.img_filter || 'images/no-image.jpg'}" alt="${bike.name}">
-                    <h3>${bike.name}</h3>
-                </div>
-            `).join('');
+            bikesContainer.innerHTML = filtered.map(bike =>
+                bikeCard(bike)
+            ).join('');
         }
 
         checkboxes.forEach(ch => ch.addEventListener('change', filterBikes));
@@ -485,13 +473,9 @@ function showPage(page) {
                 ? bikes.filter(b => selected.includes(b.manufacturer))
                 : bikes;
 
-            bikesContainer.innerHTML = filtered.map(bike => `
-                <div class="bike-box" onclick="showBike('${bike.name}')">
-                    <button class="favorite-star ${isFavorite(bike.name) ? 'active' : ''}" onclick="toggleFavorite('${bike.name}', event)">★</button>
-                    <img src="${bike.img_filter || 'images/no-image.jpg'}" alt="${bike.name}">
-                    <h3>${bike.name}</h3>
-                </div>
-            `).join('');
+            bikesContainer.innerHTML = filtered.map(bike =>
+                bikeCard(bike)
+            ).join('');
         }
 
         checkboxes.forEach(ch => ch.addEventListener('change', filterBikes));
@@ -549,14 +533,9 @@ function showPage(page) {
                 return bikeMax  >= min && bikeMin <= max;
             });
 
-            bikesContainer.innerHTML = filtered.map(bike => `
-                <div class="bike-box" onclick="showBike('${bike.name}')">
-                    <button class="favorite-star ${isFavorite(bike.name) ? 'active' : ''}" onclick="toggleFavorite('${bike.name}', event)">★</button>
-                    <img src="${bike.img_filter || 'images/no-image.jpg'}" alt="${bike.name}">
-                    <h3>${bike.name}</h3>
-                    <p>${bike.years.min}-${bike.years.max}</p>
-                </div>
-            `).join('');
+            bikesContainer.innerHTML = filtered.map(bike =>
+                bikeCard(bike, `<p>${bike.years.min}-${bike.years.max}</p>`)
+            ).join('');
 
             if (filtered.length === 0) {
                 bikesContainer.innerHTML = "<p>No bikes found in this years range.</p>";
@@ -581,13 +560,7 @@ function showPage(page) {
             bikesHTML += `<p>You have no favorite bikes yet.</p>`;
         } else {
             favoriteBikes.forEach(bike => {
-                bikesHTML += `
-                    <div class="bike-box" onclick="showBike('${bike.name}')">
-                        <button class="favorite-star ${isFavorite(bike.name) ? 'active' : ''}" onclick="toggleFavorite('${bike.name}', event)">★</button>
-                        <img src="${bike.img_filter || 'images/no-image.jpg'}" alt="${bike.name}">
-                        <h3>${bike.name}</h3>
-                    </div>
-                `;
+                bikesHTML += bikeCard(bike);
             });
         }
 
